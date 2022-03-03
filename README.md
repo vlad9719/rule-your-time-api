@@ -1,4 +1,4 @@
-### Rule Your Time App Api
+### Rule Your Time App API
 
 ## Project Description
 
