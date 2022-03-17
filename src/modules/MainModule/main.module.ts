@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { MongooseModule } from '@nestjs/mongoose';
+import { TaskModule } from "../TaskModule/ioc/task.module";
 
 @Module({
     imports: [
@@ -11,7 +12,8 @@ import { MongooseModule } from '@nestjs/mongoose';
             useFactory: async (configService: ConfigService) => ({
                 uri: configService.get<string>("MONGODB_URI")
             })
-        })
+        }),
+        TaskModule
     ]
 })
 export class MainModule { }
